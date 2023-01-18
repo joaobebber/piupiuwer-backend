@@ -27,3 +27,5 @@ Make sure you have node installed (at least `16.0.0`) by typing `node -v` in ter
 ## Notes
 
 Check for the .github/workflows files, because they will need to be updated once you start your deploy
+
+Made with 💚 by João Bebber
