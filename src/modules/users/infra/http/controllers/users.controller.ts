@@ -10,7 +10,7 @@ import ReadUserService from '@modules/users/services/ReadUser.service';
 import UpdateUserService from '@modules/users/services/UpdateUser.service';
 import DeleteUserService from '@modules/users/services/DeleteUser.service';
 
-const usersRepository = new UsersRepository();
+export const usersRepository = new UsersRepository();
 
 class UsersController {
   // CRUD requests
@@ -33,10 +33,12 @@ class UsersController {
     return response.status(201).json(user);
   }
 
-  public async read(_request: Request, response: Response) {
+  public async read(request: Request, response: Response) {
+    const { id } = request.query;
+
     const readUser = new ReadUserService(usersRepository);
 
-    const users = readUser.execute();
+    const users = readUser.execute(id as string);
 
     return response.json(users);
   }
