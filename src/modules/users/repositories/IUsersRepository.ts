@@ -14,6 +14,7 @@ interface IUsersRepository {
 
   // Search methods
   findByCpf(cpf: string): User | null;
+  findById(id: string): User | null;
   findIndexById(id: string): number | null;
 }
 

@@ -74,6 +74,10 @@ class UsersRepository implements IUsersRepository {
     return this.users.find((user) => user.cpf === cpf) || null;
   }
 
+  public findById(id: string): User | null {
+    return this.users.find((user) => user.id === id) || null;
+  }
+
   public findIndexById(id: string): number {
     return this.users.findIndex((user) => user.id === id);
   }
