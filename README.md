@@ -24,6 +24,16 @@ Make sure you have node installed (at least `16.0.0`) by typing `node -v` in ter
 
 - `yarn build`: transpile the src directory
 
+## Dependencies
+
+- `cors`: `^2.8.5`,
+- `date-fns`: `^2.29.3`,
+- `dotenv`: `^16.0.3`,
+- `express`: `^4.18.2`,
+- `express-async-errors`: `^3.1.1`,
+- `reflect-metadata`: `^0.1.13`,
+- `uuidv4`: `^6.2.13`
+
 ## Notes
 
 Check for the .github/workflows files, because they will need to be updated once you start your deploy
