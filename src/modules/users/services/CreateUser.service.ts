@@ -24,20 +24,22 @@ class CreateUserService {
   public execute({
     name, birthday, cpf, phone,
   }: IRequest): User {
+    if (!name || !birthday || !cpf || !phone) {
+      throw new AppError('All fields must have a valid information.');
+    }
+
     const userWithSameCpf = this.usersRepository.findByCpf(cpf);
 
     if (userWithSameCpf) {
       throw new AppError('User with same CPF already exists.');
     }
 
-    const user = this.usersRepository.create({
+    return this.usersRepository.create({
       name,
       birthday,
       cpf,
       phone,
     });
-
-    return user;
   }
 }
 

@@ -1,3 +1,9 @@
+// Model
+import User from '@models/User';
+
+// Application Error
+import AppError from '@shared/errors/AppError';
+
 // Repository Interface
 import IUsersRepository from '../repositories/IUsersRepository';
 
@@ -8,10 +14,16 @@ class ReadUserService {
     this.usersRepository = usersRepository;
   }
 
-  public execute() {
-    const user = this.usersRepository.read();
+  public execute(id: string): User | User[] {
+    if (id) {
+      const user = this.usersRepository.findById(id);
 
-    return user;
+      if (!user) throw new AppError('User not found.', 404);
+
+      return user;
+    }
+
+    return this.usersRepository.read();
   }
 }
 

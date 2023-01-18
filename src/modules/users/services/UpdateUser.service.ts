@@ -1,3 +1,6 @@
+// Application Error
+import AppError from '@shared/errors/AppError';
+
 // Data Transfer Object
 import IUpdateUserDTO from '../dtos/IUpdateUserDTO';
 
@@ -14,11 +17,13 @@ class UpdateUserService {
   public execute({
     id, name, birthday, phone,
   }: IUpdateUserDTO) {
-    const user = this.usersRepository.update({
+    if (!name || !birthday || !phone) {
+      throw new AppError('All fields must have a valid information.');
+    }
+
+    return this.usersRepository.update({
       id, name, birthday, phone,
     });
-
-    return user;
   }
 }
 

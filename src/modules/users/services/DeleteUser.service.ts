@@ -9,9 +9,7 @@ class DeleteUserService {
   }
 
   public execute(id: string) {
-    const user = this.usersRepository.delete(id);
-
-    return user;
+    return this.usersRepository.delete(id);
   }
 }
 
