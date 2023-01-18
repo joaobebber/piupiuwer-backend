@@ -26,13 +26,13 @@ Make sure you have node installed (at least `16.0.0`) by typing `node -v` in ter
 
 ## Dependencies
 
-- `cors`: `^2.8.5`,
-- `date-fns`: `^2.29.3`,
-- `dotenv`: `^16.0.3`,
-- `express`: `^4.18.2`,
-- `express-async-errors`: `^3.1.1`,
-- `reflect-metadata`: `^0.1.13`,
-- `uuidv4`: `^6.2.13`
+- `cors`: ^2.8.5
+- `date-fns`: ^2.29.3
+- `dotenv`: ^16.0.3
+- `express`: ^4.18.2
+- `express-async-errors`: ^3.1.1
+- `reflect-metadata`: ^0.1.13
+- `uuidv4`: ^6.2.13
 
 ## Notes
 
