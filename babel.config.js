@@ -9,6 +9,7 @@ module.exports = {
         "@modules": "./src/modules",
         "@config": "./src/config",
         "@shared": "./src/shared",
+        "@models": "./src/models",
       },
     }],
     'babel-plugin-transform-typescript-metadata',
